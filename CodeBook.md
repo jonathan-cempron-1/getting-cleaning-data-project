@@ -27,9 +27,9 @@
 * step1: load test
 subject
 * step2: load test
-* x
+x
 * step3: clean whitespaces of
- x
+x
 * step4: get mean per row of
 x
 * step5: get sd per row of
