@@ -1,4 +1,9 @@
 # RESULTING COLUMNS
+suffix mean = mean
+suffic sd = standard deviation
+total_acc = units 'g' acceleration signal x y z axis
+body_acc = body acceleration signal x y z axis
+gyro = gyroscope angular velocity reading x y z axis
 * subject
 * x_mean
 * x_sd
@@ -21,6 +26,7 @@
 * total_acc_y_sd
 * total_acc_z_mean
 * total_acc_z_sd
+
 
 # STEPS PERFORMED
 * step1: load test subject
