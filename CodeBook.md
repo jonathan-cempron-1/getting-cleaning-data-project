@@ -35,6 +35,6 @@
 * step10: repeat steps 5-9 for: body_acc_x, body_acc_y, body_acc_z, body_gyro_x, body_gyro_y, body_gyro_z, total_acc_x, total_acc_y, total_acc_z
 * step11: repeat steps 1-10 for train
 * step12: rbind formatted test and train data
-* step13: save to csv
+* step13: write.table() row.name=FALSE
 * step14: end
 
