@@ -24,17 +24,16 @@
 
 # STEPS PERFORMED
 * step1: load test subject
-* step2: cbind subject to the resulting data frame
-* step3: load test y which contains activity number
-* step4: cbind activity to the resulting data frame
-* step5: load test x
-* step6: clean whitespaces of x
-* step7: get mean per row of x
-* step8: get sd per row of x
-* step9: cbind the mean and sd to the resulting data frame
-* step10: repeat steps 5-9 for: body_acc_x, body_acc_y, body_acc_z, body_gyro_x, body_gyro_y, body_gyro_z, total_acc_x, total_acc_y, total_acc_z
-* step11: repeat steps 1-10 for train
-* step12: rbind formatted test and train data
+* step2: load test y which contains activity number
+* step3: load test x
+* step4: clean whitespaces of x
+* step5: get mean per row of x
+* step6: get sd per row of x
+* step7: repeat steps 3-6 for: body_acc_x, body_acc_y, body_acc_z, body_gyro_x, body_gyro_y, body_gyro_z, total_acc_x, total_acc_y, total_acc_z
+* step8: cbind everything
+* step9: give name for each column
+* step10: repeat steps 1-9 for train
+* step11: rbind formatted test and train data
+* step12: rename contents of activity column according to activity_labels.txt
 * step13: write.table() row.name=FALSE
 * step14: end
-
