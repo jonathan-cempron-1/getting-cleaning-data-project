@@ -2,8 +2,7 @@
 * subject
 * x_mean
 * x_sd
-* y_mean
-* y_sd
+* y = contains activity
 * body_acc_x_mean
 * body_acc_x_sd
 * body_acc_y_mean
@@ -26,16 +25,23 @@
 # STEPS PERFORMED
 * step1: load test
 subject
-* step2: load test
-x
-* step3: clean whitespaces of
-x
-* step4: get mean per row of
-x
-* step5: get sd per row of
-x
-* step6: repeat steps 2-5 for
+* step2: cbind subject to the
+resulting data frame
+* step3: load test
 y
+* step4: cbind activity to the
+resulting data frame
+* step5: load test
+x
+* step6: clean whitespaces of
+x
+* step7: get mean per row of
+x
+* step8: get sd per row of
+x
+* step9: cbind the mean and sd to the
+resulting data frame
+* step10: repeat steps 5-9 for
 body_acc_x
 body_acc_y
 body_acc_z
@@ -45,5 +51,5 @@ body_gyro_z
 total_acc_x
 total_acc_y
 total_acc_z
-* step7: repeat steps 1-6 for train
+* step11: repeat steps 1-10 for train
 
