@@ -98,6 +98,7 @@ train.data.frame = data.frame(train.subj, train.activity, train.x.mean, train.x.
 names(train.data.frame) = c("subj", "activity", "x.mean", "x.sd", "body.acc.x.mean", "body.acc.x.sd", "body.acc.y.mean", "body.acc.y.sd", "body.acc.z.mean", "body.acc.z.sd", "body.gyro.x.mean", "body.gyro.x.sd", "body.gyro.y.mean", "body.gyro.y.sd", "body.gyro.z.mean", "body.gyro.z.sd", "total.acc.x.mean", "total.acc.x.sd", "total.acc.y.mean", "total.acc.y.sd", "total.acc.z.mean", "total.acc.z.sd")
 # step11: rbind everything
 mergedData = rbind(test.data.frame, train.data.frame)
+rawMerge = mergedData
 # step12: give descriptive names for activity column
 activity1index = grep(1, mergedData$activity)
 mergedData$activity[activity1index] = "WALKING"
@@ -112,5 +113,28 @@ mergedData$activity[activity5index] = "STANDING"
 activity6index = grep(6, mergedData$activity)
 mergedData$activity[activity6index] = "LAYING"
 # step13: write data
-
-# step14: end
+write.table(mergedData, file = "TidyMergedData.txt", row.names = FALSE)
+# step14-15: separate by subject by activity
+splittedData = split(rawMerge, list(rawMerge$subj, rawMerge$activity))
+# step16: average of splitted
+subjAct = colMeans(splittedData[[1]])
+for(i in 2:length(names(splittedData))){
+  subjAct = rbind(subjAct, colMeans(splittedData[[i]]))
+}
+subjAct = data.frame(subjAct)
+# step17: give descriptive name for activity
+activity1index = grep(1, subjAct$activity)
+subjAct$activity[activity1index] = "WALKING"
+activity2index = grep(2, subjAct$activity)
+subjAct$activity[activity2index] = "WALKING_UPSTAIRS"
+activity3index = grep(3, subjAct$activity)
+subjAct$activity[activity3index] = "WALKING_DOWNSTAIRS"
+activity4index = grep(4, subjAct$activity)
+subjAct$activity[activity4index] = "SITTING"
+activity5index = grep(5, subjAct$activity)
+subjAct$activity[activity5index] = "STANDING"
+activity6index = grep(6, subjAct$activity)
+subjAct$activity[activity6index] = "LAYING"
+# step18: write to table subject activity averaged and fix names
+names(train.data.frame) = c("subj", "activity", "x.mean.avg", "x.sd.avg", "body.acc.x.mean.avg", "body.acc.x.sd.avg", "body.acc.y.mean.avg", "body.acc.y.sd.avg", "body.acc.z.mean.avg", "body.acc.z.sd.avg", "body.gyro.x.mean.avg", "body.gyro.x.sd.avg", "body.gyro.y.mean.avg", "body.gyro.y.sd.avg", "body.gyro.z.mean.avg", "body.gyro.z.sd.avg", "total.acc.x.mean.avg", "total.acc.x.sd.avg", "total.acc.y.mean.avg", "total.acc.y.sd.avg", "total.acc.z.mean.avg", "total.acc.z.sd.avg")
+write.table(subjAct, file = "TidySubjectActivityAveraged.txt", row.names = FALSE)
