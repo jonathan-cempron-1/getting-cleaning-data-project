@@ -1,9 +1,15 @@
 # RESULTING COLUMNS
-suffix mean = mean \n
-suffic sd = standard deviation \n
-total_acc = units 'g' acceleration signal x y z axis \n
-body_acc = body acceleration signal x y z axis \n
-gyro = gyroscope angular velocity reading x y z axis \n
+
+suffix mean = mean 
+
+suffic sd = standard deviation
+
+total_acc = units 'g' acceleration signal x y z axis
+
+body_acc = body acceleration signal x y z axis
+
+gyro = gyroscope angular velocity reading x y z axis
+
 * subject
 * x_mean
 * x_sd
