@@ -1,69 +1,56 @@
+# Description
+single file combined data form of raw data cellphone movement reading files provided by samsung.
+
 # RESULTING COLUMNS for TidyMergedData.txt
-
-suffix mean = mean 
-
-suffix sd = standard deviation
-
-total_acc = units 'g' acceleration signal x y z axis
-
-body_acc = body acceleration signal x y z axis
-
-gyro = gyroscope angular velocity reading x y z axis
-
-* subject
-* activity
-* x.mean
-* x.sd
-* y = contains activity
-* body.acc.x.mean
-* body.acc.x.sd
-* body.acc.y.mean
-* body.acc.y.sd
-* body.acc.z.mean
-* body.acc.z.sd
-* body.gyro.x.mean
-* body.gyro.x.sd
-* body.gyro.y.mean
-* body.gyro.y.sd
-* body.gyro.z.mean
-* body.gyro.z.sd
-* total.acc.x.mean
-* total.acc.x.sd
-* total.acc.y.mean
-* total.acc.y.sd
-* total.acc.z.mean
-* total.acc.z.sd
+*subject 
+*activity 
+*set.mean 
+*set.standard.deviation 
+*body.acceleration.x.mean 
+*body.acceleration.x.standard.deviation 
+*body.acceleration.y.mean 
+*body.acceleration.y.standard.deviation 
+*body.acceleration.z.mean 
+*body.acceleration.z.standard.deviation 
+*body.gyroscope.x.mean 
+*body.gyroscope.x.standard.deviation 
+*body.gyroscope.y.mean 
+*body.gyroscope.y.standard.deviation 
+*body.gyroscope.z.mean 
+*body.gyroscope.z.standard.deviation 
+*total.acceleration.x.mean 
+*total.acceleration.x.standard.deviation 
+*total.acceleration.y.mean 
+*total.acceleration.y.standard.deviation 
+*total.acceleration.z.mean 
+*total.acceleration.z.standard.deviation
 
 # RESULTING COLUMNS for SubjectActivityAveraged.txt
-
-avg = average from data in TidyMergedData.txt
-
-* subject
-* activity
-* x.mean.avg
-* x.sd.avg
-* y = contains activity.avg
-* body.acc.x.mean.avg
-* body.acc.x.sd.avg
-* body.acc.y.mean.avg
-* body.acc.y.sd.avg
-* body.acc.z.mean.avg
-* body.acc.z.sd.avg
-* body.gyro.x.mean.avg
-* body.gyro.x.sd.avg
-* body.gyro.y.mean.avg
-* body.gyro.y.sd.avg
-* body.gyro.z.mean.avg
-* body.gyro.z.sd.avg
-* total.acc.x.mean.avg
-* total.acc.x.sd.avg
-* total.acc.y.mean.avg
-* total.acc.y.sd.avg
-* total.acc.z.mean.avg
-* total.acc.z.sd.avg
+*subject 
+*activity 
+*set.mean 
+*set.standard.deviation 
+*body.acceleration.x.mean 
+*body.acceleration.x.standard.deviation 
+*body.acceleration.y.mean 
+*body.acceleration.y.standard.deviation 
+*body.acceleration.z.mean 
+*body.acceleration.z.standard.deviation 
+*body.gyroscope.x.mean 
+*body.gyroscope.x.standard.deviation 
+*body.gyroscope.y.mean 
+*body.gyroscope.y.standard.deviation 
+*body.gyroscope.z.mean 
+*body.gyroscope.z.standard.deviation 
+*total.acceleration.x.mean 
+*total.acceleration.x.standard.deviation 
+*total.acceleration.y.mean 
+*total.acceleration.y.standard.deviation 
+*total.acceleration.z.mean 
+*total.acceleration.z.standard.deviation
 
 
-# STEPS PERFORMED
+# STEPS PERFORMED by run_analysis.R
 * step1: load test subject
 * step2: load test y which contains activity number
 * step3: load test x
